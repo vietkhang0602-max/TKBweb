@@ -1,0 +1,238 @@
+:root {
+    --primary: #2563eb;
+    --dark: #0f172a;
+    --light: #f8fafc;
+    --accent: #38bdf8;
+    --text-muted: #64748b;
+    --overlay: rgba(15, 23, 42, 0.75);
+}
+
+/* RESET & CHUNG */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; background: #fff; color: var(--dark); line-height: 1.7; }
+
+.container { max-width: 1200px; margin: auto; padding: 60px 20px; }
+.bg-dark { background: var(--dark); color: white; }
+.bg-light { background: #f1f5f9; }
+
+/* NAVBAR */
+.navbar { 
+    background: rgba(255,255,255,0.9); 
+    backdrop-filter: blur(10px); 
+    position: sticky; 
+    top: 0; 
+    z-index: 100; 
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); 
+}
+.nav-content { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px !important; }
+.logo { font-weight: 800; font-size: 1.4rem; color: var(--primary); letter-spacing: -1px; }
+.nav-links { display: flex; list-style: none; }
+.nav-links a { text-decoration: none; color: var(--dark); font-weight: 600; margin-left: 30px; font-size: 0.95rem; }
+
+/* HERO SECTION - GIỮ HÌNH NỀN VNE */
+.hero-section { 
+    position: relative;
+    padding: 140px 0; 
+    text-align: center; 
+    color: white;
+    background: linear-gradient(var(--overlay), var(--overlay)), 
+                url('https://i2-vnexpress.vnecdn.net/2023/08/25/dientuvienthong-1692930898-169-1273-3278-1692931755.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=HHsTVYAC_E53OMkxAKu0PQ');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.badge { background: rgba(56, 189, 248, 0.2); color: var(--accent); padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; }
+.hero-section h1 { font-size: 3.5rem; line-height: 1.1; margin: 20px 0; font-weight: 800; }
+.btn { background: var(--primary); color: white; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: 0.3s; display: inline-block; border: none; cursor: pointer; }
+.btn-outline { background: transparent; border: 2px solid rgba(255,255,255,0.5); margin-left: 10px; }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3); }
+
+/* GRID & FEATURES */
+.section-title { text-align: center; font-size: 2.2rem; margin-bottom: 50px; position: relative; }
+.section-title::after { content: ''; width: 60px; height: 4px; background: var(--primary); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
+
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.feature-card { padding: 40px; border: 1px solid #e2e8f0; border-radius: 16px; transition: 0.3s; background: #fff; }
+.feature-card:hover { border-color: var(--primary); transform: translateY(-5px); }
+.icon { font-size: 3rem; margin-bottom: 20px; display: block; }
+
+/* ROADMAP */
+.roadmap { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 40px; }
+.roadmap-step { flex: 1; min-width: 250px; background: rgba(255,255,255,0.05); padding: 30px; border-radius: 12px; border-left: 4px solid var(--accent); }
+.step-num { font-size: 2rem; font-weight: 800; opacity: 0.3; }
+
+/* TABLE & UNI CARDS */
+.table-container { overflow-x: auto; margin: 30px 0; }
+table { width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; }
+th, td { padding: 20px; text-align: left; border-bottom: 1px solid #e2e8f0; }
+th { background: #f8fafc; font-weight: 700; }
+
+.uni-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+.uni-card-link { text-decoration: none; color: inherit; display: block; }
+.uni-card { background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); border: 1px solid #eee; transition: 0.3s; }
+.uni-card:hover { border-color: var(--primary); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.tag { display: inline-block; margin-top: 15px; font-size: 0.75rem; color: var(--primary); font-weight: 700; }
+
+/* --- PHẦN QUIZ (GIỮ NGUYÊN GỐC) --- */
+.quiz-box {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    max-width: 700px;
+    margin: 40px auto;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+}
+.quiz-header {
+    font-size: 0.9rem;
+    color: var(--primary);
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.quiz-q {
+    font-size: 1.4rem;
+    color: var(--dark);
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+.options-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.quiz-option {
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    padding: 16px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: inherit;
+    text-align: left;
+    transition: all 0.2s ease;
+    color: var(--dark);
+}
+.quiz-option:hover {
+    background: #eff6ff;
+    border-color: var(--primary);
+    transform: translateX(5px);
+}
+.result-box { animation: fadeIn 0.5s ease; }
+.quiz-intro { font-size: 1.1rem; margin-bottom: 25px; color: var(--text-muted); }
+/* ---------------------------------- */
+
+/* FOOTER */
+footer { background: var(--dark); color: #94a3b8; padding: 60px 0 20px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 50px; padding-bottom: 40px !important; }
+.footer-grid h4 { color: white; margin-bottom: 20px; }
+.footer-grid ul { list-style: none; }
+.footer-grid a { color: #94a3b8; text-decoration: none; }
+.copyright { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; font-size: 0.8rem; }
+
+.mt-40 { margin-top: 40px; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+
+
+/* CSS CHO TEAM SECTION */
+.team-card {
+    text-align: center;
+    border-top: 4px solid var(--primary); /* Tạo điểm nhấn ở viền trên */
+    transition: transform 0.3s ease;
+}
+
+.team-card:nth-child(2) { border-top-color: #10b981; } /* Màu xanh lá cho Content */
+.team-card:nth-child(3) { border-top-color: #f59e0b; } /* Màu vàng cam cho Thuyết trình */
+
+.team-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    background: #f1f5f9;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+}
+
+.team-card h3 {
+    font-size: 1.2rem;
+    color: var(--dark);
+    margin-bottom: 5px;
+}
+
+
+/* Tối ưu layout cho About Section */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.about-main-info .feature-card {
+    height: 100%;
+    background: #ffffff;
+    border-left: 5px solid var(--primary);
+}
+
+.about-stats-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.stat-card {
+    padding: 25px;
+    background: #f8fafc;
+    border-radius: 15px;
+    border: 1px solid #e2e8f0;
+}
+
+.stat-card.accent {
+    background: var(--dark);
+    color: white;
+}
+
+.stat-card h4 {
+    color: var(--primary);
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.stat-card.accent h4 {
+    color: var(--accent);
+}
+
+/* Career Advice Box */
+.career-advice {
+    background: linear-gradient(135deg, #f1f5f9 0%, #ffffff 100%);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px dashed var(--primary);
+    position: relative;
+}
+
+.fpt-highlight {
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: 1px solid #e2e8f0;
+    text-align: center;
+}
+
+.fpt-highlight p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: var(--dark);
+}
+
+/* Mobile Responsive */
+@media (max-width: 992px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+}
